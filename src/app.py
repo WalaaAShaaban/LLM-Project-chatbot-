@@ -2,9 +2,9 @@ import sys
 sys.path.append('/home/walaa-shaban/Documents/project/capston_llm_training/LLM-Project-chatbot/')
 import streamlit as st
 from streamlit_chat import message as st_message
-from model.ChatModel import ChatModel
+from model.ModelCSV import ModelCSV
 
-chat_model = ChatModel()
+chat_model = ModelCSV()
 
 def get_response():
     user_message = st.session_state.chat_text
