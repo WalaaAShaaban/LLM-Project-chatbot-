@@ -7,3 +7,7 @@ class embedding:
         return embeddings.tolist()
     def embed_query(self,query):
         return self.model.encode(query).tolist()
+    def _embed_query(self,query):
+        return self.model.encode(query).tolist()
+    def __call__(self,query):
+        return self._embed_query(query)
