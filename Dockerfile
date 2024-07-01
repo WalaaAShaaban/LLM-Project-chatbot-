@@ -1,13 +1,12 @@
-FROM python:3.9-alpine
+FROM python:3.10
+RUN mkdir /app
 
-COPY . /app
 WORKDIR /app
+COPY . .
 
-# Update pip
-RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install dependencies
 
-RUN pip3 install -r requirement.txt
+EXPOSE 8501
 
-CMD ["python", "app.py"]
+CMD streamlit run src/app.py
